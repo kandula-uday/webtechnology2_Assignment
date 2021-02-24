@@ -61,7 +61,7 @@ function validateuser() {
         alert("Form is submitted");
     }
     else {
-        alert("Fill out the Form");
+        alert("Fillout the Form");
     }
 }
 
