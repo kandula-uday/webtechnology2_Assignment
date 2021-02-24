@@ -25,14 +25,15 @@ function validateuser() {
         document.getElementById("mail-msg").innerHTML="Enter mail address";
                 
     } 
-    else if(email != re_email) {
-        document.getElementById("remail-msg").innerHTML="Email address mismatch";
-                
-    }
     else if (!(email.match(mailformat))) {
         document.getElementById("mail-msg").innerHTML=" mail address is invalid";
                    
     }
+    else if(email != re_email) {
+        document.getElementById("remail-msg").innerHTML="Email address mismatch";
+                
+    }
+
     else if(tel.match(telno)) {
         document.getElementById("phone-msg").innerHTML="phone number is invalid";
     }
