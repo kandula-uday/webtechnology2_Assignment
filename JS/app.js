@@ -1,6 +1,7 @@
 // // File Validation
 
 function validateuser() {
+
     var first_name = document.getElementById("fname").value;
     var last_name = document.getElementById("lname").value;
     var email = document.getElementById("mail").value;
@@ -9,8 +10,7 @@ function validateuser() {
     var re_email = document.getElementById("re-mail").value;
     var password = document.getElementById("pass").value;
     var re_password = document.getElementById("re-pass").value;
-    var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
-    var validEmail = regEx.test(email);
+    var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
 
      
     // alert(first_name);
@@ -18,31 +18,34 @@ function validateuser() {
              document.getElementById("fname-msg").innerHTML="Enter first name";
         
     }
-    if (last_name == ""){
+    else if (last_name == ""){
         document.getElementById("lname-msg").innerHTML="Enter last name";
     }
-    if (email == "" || email.length < 1 ) {
+    else if (email == "" || email.length < 1 ) {
         document.getElementById("mail-msg").innerHTML="Enter mail address";
                 
     } 
-    if(email != re_email) {
+    else if(email != re_email) {
         document.getElementById("remail-msg").innerHTML="Email address mismatch";
                 
     }
-    if (!validEmail) {
+    else if (!(email.match(mailformat))) {
         document.getElementById("mail-msg").innerHTML=" mail address is invalid";
                    
     }
-    if(tel.match(telno)) {
+    else if(tel.match(telno)) {
         document.getElementById("phone-msg").innerHTML="phone number is invalid";
     }
-    if(password == "" ){
+    else if(password == "" ){
         document.getElementById("pass-msg").innerHTML="Enter password";
                    
     }
-    if (password != re_password) {
+    else if (password != re_password) {
         document.getElementById("repass-msg").innerHTML="password mismatch" 
                     
+    }
+    else {
+        alert("Form is submitted");
     }
 }
 
