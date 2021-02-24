@@ -5,47 +5,51 @@ function validateuser() {
     var first_name = document.getElementById("fname").value;
     var last_name = document.getElementById("lname").value;
     var email = document.getElementById("mail").value;
+    var atpos = email.indexOf("@");
+    var dotpos = email.lastIndexOf("."); 
     var tel = document.getElementById("phone").value;
     var telno = /^\d{10}$/;
     var re_email = document.getElementById("re-mail").value;
     var password = document.getElementById("pass").value;
     var re_password = document.getElementById("re-pass").value;
-    var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
 
      
     // alert(first_name);
     if (first_name == "") {
              document.getElementById("fname-msg").innerHTML="Enter first name";
+             document.getElementById("fname-msg").focus();
         
     }
-    else if (last_name == ""){
+    if (last_name == ""){
         document.getElementById("lname-msg").innerHTML="Enter last name";
+        document.getElementById("lname-msg").focus();
     }
-    else if (email == "" || email.length < 1 ) {
-        document.getElementById("mail-msg").innerHTML="Enter mail address";
+    if (email == "" || atpos < 1 || ( dotpos - atpos < 2 ) ) {
+        document.getElementById("mail-msg").innerHTML="Enter mail address or invalid";
+        document.getElementById("mail-msg").focus();
                 
     } 
-    else if (!(email.match(mailformat))) {
-        document.getElementById("mail-msg").innerHTML=" mail address is invalid";
-                   
-    }
-    else if(email != re_email) {
+    if(email != re_email) {
         document.getElementById("remail-msg").innerHTML="Email address mismatch";
+        document.getElementById("remail-msg").focus();
                 
     }
 
-    else if(tel.match(telno)) {
+    if(tel.match(telno)) {
         document.getElementById("phone-msg").innerHTML="phone number is invalid";
+        document.getElementById("phone-msg").focus();
     }
-    else if(password == "" ){
+    if(password == "" ){
         document.getElementById("pass-msg").innerHTML="Enter password";
+        document.getElementById("pass-msg").focus();
                    
     }
-    else if (password != re_password) {
+    if (password != re_password) {
         document.getElementById("repass-msg").innerHTML="password mismatch" 
+        document.getElementById("repass-msg").focus();
                     
     }
-    else {
+    if(true) {
         alert("Form is submitted");
     }
 }
