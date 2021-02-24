@@ -36,7 +36,7 @@ function validateuser() {
     if(tel.match(telno)) {
         document.getElementById("phone-msg").innerHTML="phone number is invalid";
     }
-    if(password === " " ){
+    if(password == "" ){
         document.getElementById("pass-msg").innerHTML="Enter password";
                    
     }
