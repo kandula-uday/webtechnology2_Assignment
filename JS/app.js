@@ -1,7 +1,7 @@
 // // File Validation
 
 function validateuser() {
-
+    document.getElementById("validation-form").reset();
     var first_name = document.getElementById("fname").value;
     var last_name = document.getElementById("lname").value;
     var email = document.getElementById("mail").value;
