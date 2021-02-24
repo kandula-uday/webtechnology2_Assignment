@@ -5,9 +5,13 @@ function validateuser() {
     var last_name = document.getElementById("lname").value;
     var email = document.getElementById("mail").value;
     var tel = document.getElementById("phone").value;
+    var telno = /^\d{10}$/;
     var re_email = document.getElementById("re-mail").value;
     var password = document.getElementById("pass").value;
     var re_password = document.getElementById("re-pass").value;
+    var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+    var validEmail = regEx.test(email);
+
      
     // alert(first_name);
     if (first_name == "") {
@@ -29,8 +33,8 @@ function validateuser() {
         document.getElementById("mail-msg").innerHTML=" mail address is invalid";
                    
     }
-    if(Number.isInteger(tel)) {
-        document.getElementById("phone-msg").innerHTML=" mail address is invalid";
+    if(tel.match(telno)) {
+        document.getElementById("phone-msg").innerHTML="phone number is invalid";
     }
     if(password === " " ){
         document.getElementById("pass-msg").innerHTML="Enter password";
@@ -91,9 +95,9 @@ function validateuser() {
     // var re_email = document.getElementById("re-mail").value;
     // var password = document.getElementById("pass").value;
     // var re_password = document.getElementById("re-pass").value;
-    // var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+    //  var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
     // var validEmail = regEx.test(email);
-    // var isValid = true;
+    // // var isValid = true;
     // if (first_name === " " || first_name == null ) {
     //          document.getElementById("fname-msg").innerHTML="Enter first name";
     //          isValid = false;
