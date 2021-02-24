@@ -4,6 +4,7 @@ function validateuser() {
     var first_name = document.getElementById("fname").value;
     var last_name = document.getElementById("lname").value;
     var email = document.getElementById("mail").value;
+    var tel = document.getElementById("phone").value;
     var re_email = document.getElementById("re-mail").value;
     var password = document.getElementById("pass").value;
     var re_password = document.getElementById("re-pass").value;
@@ -17,7 +18,7 @@ function validateuser() {
         document.getElementById("lname-msg").innerHTML="Enter last name";
     }
     if (email == "" || email.length < 1 ) {
-        document.getElementById("mailmsg").innerHTML="Enter mail address";
+        document.getElementById("mail-msg").innerHTML="Enter mail address";
                 
     } 
     if(email != re_email) {
@@ -25,11 +26,14 @@ function validateuser() {
                 
     }
     if (!validEmail) {
-        document.getElementById("mailmsg").innerHTML=" mail address is invalid" ;
+        document.getElementById("mail-msg").innerHTML=" mail address is invalid";
                    
     }
+    if(Number.isInteger(tel)) {
+        document.getElementById("phone-msg").innerHTML=" mail address is invalid";
+    }
     if(password === " " ){
-        document.getElementById("passmsg").innerHTML="Enter password";
+        document.getElementById("pass-msg").innerHTML="Enter password";
                    
     }
     if (password != re_password) {
