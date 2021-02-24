@@ -12,45 +12,56 @@ function validateuser() {
     var re_email = document.getElementById("re-mail").value;
     var password = document.getElementById("pass").value;
     var re_password = document.getElementById("re-pass").value;
+    var valid = true;
 
      
     // alert(first_name);
     if (first_name == "") {
              document.getElementById("fname-msg").innerHTML="Enter first name";
              document.getElementById("fname-msg").focus();
+             valid = false;
         
     }
     if (last_name == ""){
         document.getElementById("lname-msg").innerHTML="Enter last name";
         document.getElementById("lname-msg").focus();
+        valid = false;
     }
     if (email == "" || atpos < 1 || ( dotpos - atpos < 2 ) ) {
         document.getElementById("mail-msg").innerHTML="Enter mail address or invalid";
         document.getElementById("mail-msg").focus();
+        valid = false;
                 
     } 
     if(email != re_email) {
         document.getElementById("remail-msg").innerHTML="Email address mismatch";
         document.getElementById("remail-msg").focus();
+        valid = false;
                 
     }
 
     if(tel.match(telno)) {
         document.getElementById("phone-msg").innerHTML="phone number is invalid";
         document.getElementById("phone-msg").focus();
+        valid = false;
     }
     if(password == "" ){
         document.getElementById("pass-msg").innerHTML="Enter password";
         document.getElementById("pass-msg").focus();
+        valid = false;
                    
     }
     if (password != re_password) {
         document.getElementById("repass-msg").innerHTML="password mismatch" 
         document.getElementById("repass-msg").focus();
+        valid = false;
                     
     }
-    if(true) {
+    if(valid) {
         alert("Form is submitted");
+    }
+    else {
+        alert("Fill out the Form");
     }
 }
 
