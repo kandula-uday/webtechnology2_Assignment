@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/index.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    
+    
+
+    <title>Form Validation</title>
+    <link rel="icon" href="../IMAGES/image1.jpg">
+</head>
+<body>
+    <nav>
+        <img src="../IMAGES/image1.jpg" width="75px" height="75px">
+    </nav>
+    <div class="flex-container">
+        <div>
+            <h1>Privacy Policy</h1>
+            <p>
+                A privacy policy is a legal document that discloses the ways in which a website collects, processes, stores, shares and protects user data, the purposes for doing so and the rights of the users in that regard. 
+                All websites interact with and collect data about their visitors in one way or another.Your privacy statement should be clear, direct and easy to understand. 
+                Keep technical jargon and legal terminology to a minimum. If you decide to modify how you use personal information, you must inform your users.
+                A company's privacy policy is only as strong as the staff that implements it.
+                Privacy laws around the world dictate that if you collect personal information from your website visitors, then you need to have a Privacy Policy posted to your site and available with your mobile app (if applicable).
+            </p>
+        </div>
+        <div>
+            <h1>Legal</h1>
+            <p>
+                Accordingly, any website based in California or getting traffic from California residents must comply with CalOPPA. 
+                In addition to having a privacy policy, a site must protect users' “personally identifiable information,” including: First and last name. Physical address.
+                A privacy policy includes a text section of your website that tells visitors and customers exactly what data you collect from them. And it explains how you use it.
+                Beyond the business-name basics, you will almost certainly need a state tax identification number and a sales tax permit. You may also need a business permit from a state agency.
+                However, if your online store sells items that are regulated by a state agency (food or live plants, for example), you may need one.
+            </p>
+        </div>
+        <div>
+            <h1>Specific Instruction</h1>
+            <p>
+                A Site Instruction (SI) is a formal instruction sent from the head contractor that contains directives for contractors working on a project
+                Provide a link to the homepage from every page on the website.Display a statement of content ownership or management on every page. 
+                Include an About Us page that explains the site's mission, governance, and responsible parties.Construction contracts generally give the contract administrator the power to issue instructions to the contractor. 
+                These instructions can be called 'contract administrator's instructions' or 'architect's instructions' (AI)
+            </p>
+        </div>
+
+
+        </div>
+        <div class="form-container">
+            <form id="validation-form" name="validation-form" method="POST" action="#">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"  placeholder="First name"><br>
+                <p id="fname-msg"></p>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" placeholder="Last name"><br>
+                <p id="lname-msg"></p>
+                <label for="mail">E-mail address:</label><br>
+                <input type="email" id="mail" name="email" placeholder="Email"><br>
+                <p id="mail-msg"></p>
+                <label for="re-mail">Re-enter E-mail address:</label><br>
+                <input type="email" id="re-mail" name="re-email" placeholder="Re Enter Email" ><br>
+                <p id="remail-msg"></p>
+                <label for="phone"> Mobile Number:</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="Phone-number"><br>
+                <label for="pass">Password:</label><br>
+                <input type="password" id="pass" name="password" placeholder="Enter Password" ><br>
+                <div id="pass-msg"></div>
+                <label for="re-pass">Re-enter Password:</label><br>
+                <input type="password" id="re-pass" name="re-password" placeholder="Re-Enter Password"><br>
+                <div id="repass-msg"></div>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="submit" id="myBtn" onclick="validateuser();return false" value="submit">
+            </form>
+        </div>
+    </div>
+    <script src="../JS/app.js" type="application/javascript"></script>
+</body>
+</html>
